@@ -2,12 +2,12 @@ class Ixwebsocket < Formula
   desc "WebSocket client and server, and HTTP client command-line tool"
   homepage "https://github.com/machinezone/IXWebSocket"
 
-  url "https://github.com/machinezone/IXWebSocket/archive/v1.3.0.tar.gz"
-  sha256 "25c6f9de76d46dff4b152821adffd2c85c56f94e216de6f154e8168b5192de9a"
+  url "https://github.com/machinezone/IXWebSocket/archive/v11.4.6.tar.gz"
+  sha256 "c024334f8e45980836c67008979a884d6dcc5ef067dd2eb1fa7241f4c17ddc32"
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", *std_cmake_args, "-DUSE_TLS=ON"
     system "make", "install"
   end
 
